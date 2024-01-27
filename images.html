@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Aspsund</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+
+      body {
+          margin: 0;
+          font-family: Arial;
+      }
+
+      /* The grid: Four equal columns that floats next to each other */
+      .column {
+          float: left;
+          width: 25%;
+          padding: 10px;
+      }
+
+      /* Style the images inside the grid */
+      .column img {
+          opacity: 0.8;
+          cursor: pointer;
+      }
+
+      .column img:hover {
+          opacity: 1;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+          content: "";
+          display: table;
+          clear: both;
+      }
+
+      /* The expanding image container */
+      .container {
+          position: relative;
+          display: none;
+          border: 1px solid black;
+      }
+
+      /* Expanding image text */
+      #imgtext {
+          position: absolute;
+          bottom: 15px;
+          left: 15px;
+          color: white;
+          font-size: 20px;
+      }
+
+      /* Closable button inside the expanded image */
+      .closebtn {
+          position: absolute;
+          top: -15px;
+          right: 15px;
+          color: black;
+          font-size: 50px;
+          cursor: pointer;
+      }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+</head>
+
+<body>
+<!--Navigation bar-->
+<div id="nav-placeholder"></div>
+<!--end of Navigation bar-->
+<br>
+
+<div style="text-align:left">
+  <h3>Bilder från förr</h3>
+</div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h4 id="headerText"></h4>
+  <p id="infoText"></p>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext" style="color:black"></div>
+  <div>&nbsp;</div>
+</div>
+<br/><br/>
+<!-- The four columns -->
+<div class="row">
+  <div class=col-sm-3" style="text-align: center">
+    <img src="images/Selma_Viktor_Lisa_Gunvor_mattsson.jpg" alt="" style="width:200px" onclick="myFunction(this, '20-tal', 'Mattssons vid trädgårdsmöbel');">
+  </div>
+  <div class=col-sm-3" style="text-align: center">
+    <img src="images/viktor_selma_gunvor_lisa_gunnar_mfl.jpg" alt="" style="width:200px" onclick="myFunction(this, '30-tal', 'Mattssons framför huset');">
+  </div>
+  <div class=col-sm-3" style="text-align: center">
+    <img src="images/gunnar_sten_viktor.jpg" alt="" style="width:200px" onclick="myFunction(this, '1930', 'Foto på gårdens hästar 1930 ute på hagen. Gunnar Eriksson, Sten Gunnarsson (4år), Okänd och Viktor Mattsson.');">
+  </div>
+  <div class=col-sm-3" style="text-align: center">
+    <img src="images/ragnar_inggun_albert.jpg" alt="" style="width:200px"
+         onclick="myFunction(this, '50-tal', 'Ragnar Gustavsson med sin far Albert och dotter Ing-gun. Höskörd Tidigt 50-tal');">
+  </div>
+</div>
+<div class="row">
+  <div class=col-sm-3" style="text-align: center">
+    <img src="images/hus_och_helena.jpg" alt="" style="width:200px" onclick="myFunction(this, '50-tal', 'Helena Gustavsson (gift Eriksson)');">
+  </div>
+  <div class=col-sm-3" style="text-align: center">
+    <img src="images/gunvor_och_lisa_mattsson.jpeg" alt="" style="width:200px" onclick="myFunction(this, '20-tal', 'Gunvor och Lisa Mattsson');">
+  </div>
+  <div class=col-sm-3" style="text-align: center">
+    <img src="images/Gronvall.jpg" alt="" style="width:200px"
+         onclick="myFunction(this, '1880-tal', 'Fanjunkare Lars Fredrik Grönvall och Emma Kristina Paulina. Fanjunkare Grönvall var den siste kavalleristen i byn, från ca 1881 till 1887. ' +
+          'Aspsund no 5 tillhörde livregement till häst från slutet av 1600- till slutet av 1800-talet. ' +
+           'Bild lämnad av Eric Reed, släktforskare och barnbarnsbarnbarn till Grönvalls svärmor Anna Kristina Wallin som bodde kvar på gården till 1890. ');">
+  </div>
+</div>
+
+<script>
+    function myFunction(imgs, headertext, infotext) {
+        var expandImg = document.getElementById("expandedImg");
+        //var imgText = document.getElementById("imgtext");
+        var headerText = document.getElementById("headerText");
+        var infoText = document.getElementById("infoText");
+        headerText.innerText=headertext?headertext:'';
+        infoText.innerText=infotext?infotext:'';
+        expandImg.src = imgs.src;
+        //imgText.innerHTML = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+    }
+</script>
+
+<!--footer-->
+<div id="footer-placeholder"></div>
+<!--end of footer-->
+</body>
+</html>

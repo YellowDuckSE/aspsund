@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Aspsund</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+
+      body {
+          margin: 0;
+          font-family: Arial;
+      }
+
+      /* The grid: Four equal columns that floats next to each other */
+      .column {
+          float: left;
+          width: 25%;
+          padding: 10px;
+      }
+
+      /* Style the images inside the grid */
+      .column img {
+          opacity: 0.8;
+          cursor: pointer;
+      }
+
+      .column img:hover {
+          opacity: 1;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+          content: "";
+          display: table;
+          clear: both;
+      }
+
+      /* The expanding image container */
+      .container {
+          position: relative;
+          display: none;
+      }
+
+      /* Expanding image text */
+      #imgtext {
+          position: absolute;
+          bottom: 15px;
+          left: 15px;
+          color: white;
+          font-size: 20px;
+      }
+
+      /* Closable button inside the expanded image */
+      .closebtn {
+          position: absolute;
+          top: 10px;
+          right: 15px;
+          color: white;
+          font-size: 35px;
+          cursor: pointer;
+      }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/footer.js"></script>
+</head>
+<body>
+<!--Navigation bar-->
+<div id="nav-placeholder"></div>
+<!--end of Navigation bar-->
+<br>
+
+<div style="text-align:left">
+  <h3>Historiska kartor</h3>
+  <br/>
+</div>
+
+
+<!-- The four columns-->
+<div class="row">
+  <div class=col-sm-4" style="text-align: center">
+    <h5>År 1639</h5>
+    <div>Geometrisk avmätning</div>
+    <div><img src="images/maps/aspsund_geometriskavmatning_1639.jpg" alt="Bykarta år 1639 Geometrisk avmätning" style="width:200px"
+         onclick="myFunction(this, 'Aspsund år 1639', 'Bykarta år 1639. Geometrisk avmätning. Lantmäteriets aktbeteckning: A101-3:A8:104. Lantmätare Sven månsson');"/></div>
+      <div><a href="images/maps/A101-3_A8_104.pdf" download>Ladda ned hela akten som PDF</a></div>
+    <div>&nbsp;</div>
+  </div>
+
+  <div class=col-sm-4" style="text-align: center">
+    <h5>År 1705</h5>
+    <div>Ägobeskrivning</div>
+    <div><img src="images/maps/aspsund_geometriskkarta_1705.jpg" alt="Bykarta år 1705 Geometrisk karta" style="width:200px"
+         onclick="myFunction(this, 'Aspsund år 1705', 'Bykarta år 1705. Geometrisk karta. Arealavmätning. Ägobeskrivning. Lantmäteriets aktbeteckning: 01-söd-5 (karta från sida 3!).');"/></div>
+      <div><a href="images/maps/01-söd-5.pdf" download>Ladda ned hela akten som PDF</a></div>
+    <div>&nbsp;</div>
+  </div>
+
+  <div class="col-sm-4" style="text-align: center">
+    <h5>År 1705</h5>
+    <div>Skattläggning</div>
+    <div><img src="images/maps/aspsund_skattlaggningsberedning_1705.jpg" alt="Bykarta år 1705 Skattläggningsberedning" style="width:200px"
+         onclick="myFunction(this, 'Aspsund år 1705', 'Skattläggningsberedning. Aktbeteckning: A101-3:1 Hofslagarbostället står det på kartan för gården längst norrut');"/></div>
+    <div><a href="images/maps/A101-3_1.pdf" download>Ladda ned hela akten som PDF</a></div>
+    <div>&nbsp;</div>
+  </div>
+</div>
+
+<br/><br/>
+<div class="container">
+  <h4 id="headerText"></h4>
+  <p id="infoText"></p>
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+    <div id="imgtext" style="color:black"></div>
+</div>
+
+<script>
+    function myFunction(imgs, headertext, infotext) {
+        var expandImg = document.getElementById("expandedImg");
+        //var imgText = document.getElementById("imgtext");
+        var headerText = document.getElementById("headerText");
+        var infoText = document.getElementById("infoText");
+        headerText.innerText=headertext;
+        infoText.innerText=infotext;
+        expandImg.src = imgs.src;
+        //imgText.innerHTML = imgs.alt;
+        expandImg.parentElement.style.display = "block";
+    }
+</script>
+
+<!--footer-->
+<div id="footer-placeholder"></div>
+<!--end of footer-->
+</body>
+</html>
