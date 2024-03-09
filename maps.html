@@ -90,7 +90,7 @@
   <div class=col-sm-4" style="text-align: center">
     <h5>År 1639</h5>
     <div>Geometrisk avmätning</div>
-    <div><img src="images/maps/aspsund_geometriskavmatning_1639.jpg" alt="Bykarta år 1639 Geometrisk avmätning" style="width:200px"
+    <div><img src="images/maps/aspsund_geometriskavmatning_1639.png" alt="Bykarta år 1639 Geometrisk avmätning" style="width:200px"
          onclick="myFunction(this, 'Aspsund år 1639', 'Bykarta år 1639. Geometrisk avmätning. Lantmäteriets aktbeteckning: A101-3:A8:104. Lantmätare Sven månsson');"/></div>
       <div><a href="images/maps/A101-3_A8_104.pdf" download>Ladda ned hela akten som PDF</a></div>
     <div>&nbsp;</div>
@@ -99,7 +99,7 @@
   <div class=col-sm-4" style="text-align: center">
     <h5>År 1705</h5>
     <div>Ägobeskrivning</div>
-    <div><img src="images/maps/aspsund_geometriskkarta_1705.jpg" alt="Bykarta år 1705 Geometrisk karta" style="width:200px"
+    <div><img src="images/maps/aspsund_geometriskkarta_1705.png" alt="Bykarta år 1705 Geometrisk karta" style="width:200px"
          onclick="myFunction(this, 'Aspsund år 1705', 'Bykarta år 1705. Geometrisk karta. Arealavmätning. Ägobeskrivning. Lantmäteriets aktbeteckning: 01-söd-5 (karta från sida 3!).');"/></div>
       <div><a href="images/maps/01-söd-5.pdf" download>Ladda ned hela akten som PDF</a></div>
     <div>&nbsp;</div>
@@ -108,8 +108,8 @@
   <div class="col-sm-4" style="text-align: center">
     <h5>År 1705</h5>
     <div>Skattläggning</div>
-    <div><img src="images/maps/aspsund_skattlaggningsberedning_1705.jpg" alt="Bykarta år 1705 Skattläggningsberedning" style="width:200px"
-         onclick="myFunction(this, 'Aspsund år 1705', 'Skattläggningsberedning. Aktbeteckning: A101-3:1 Hofslagarbostället står det på kartan för gården längst norrut');"/></div>
+    <div><img src="images/maps/aspsund_skattlaggningsberedning_1705.png" alt="Bykarta år 1705 Skattläggningsberedning" style="width:200px"
+         onclick="myFunction(this, 'Aspsund år 1705', 'Skattläggningsberedning. Aktbeteckning: A101-3:1 Hofslagarbostället står det på kartan för gården längst norrut (tillhörande Roslags kompani, Lifregementet till häst sedan 1682 se referenslistan no [14] Garland');"/></div>
     <div><a href="images/maps/A101-3_1.pdf" download>Ladda ned hela akten som PDF</a></div>
     <div>&nbsp;</div>
   </div>
@@ -132,7 +132,7 @@
         var infoText = document.getElementById("infoText");
         headerText.innerText=headertext;
         infoText.innerText=infotext;
-        expandImg.src = imgs.src;
+        expandImg.src = imgs.src.replace('.png', '.jpg')
         //imgText.innerHTML = imgs.alt;
         expandImg.parentElement.style.display = "block";
     }
