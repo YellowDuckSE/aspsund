@@ -18,7 +18,7 @@ function fetchTemp(past_id = -1) {
         var timeStamp = data.feeds[0].created_at;
         var localDate = new Date(timeStamp);
         var tempts = $('.temp-timestamp');
-        tempts.text(localDate.toString().substring(0, 31));
+        tempts.text(localDate.toString().substring(0, 25));
         tempts.css("color");
         if (data.feeds[0].entry_id === past_id) {
             tempts.text("Temperaturuppdatering misslyckades!");
